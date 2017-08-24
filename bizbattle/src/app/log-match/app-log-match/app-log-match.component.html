@@ -1,0 +1,22 @@
+<md-card>
+  <md-card-title-group>
+    <md-card-title>Log match card!</md-card-title>
+  </md-card-title-group>
+  <md-card-content>
+    <p> Hvor mange spillere er I?</p>
+    <md-radio-group style="display: flex; justify-content: center">
+      <md-radio-button *ngFor="let number of numbers"
+                       [value]="number">
+        {{number}}&nbsp;&nbsp;
+      </md-radio-button>
+    </md-radio-group>
+  </md-card-content>
+
+  <md-card-actions style="text-align: right;">
+    <button md-raised-button
+            color="accent"
+            style="margin-right: 1em; margin-bottom: 0.3em;">Ok
+    </button>
+  </md-card-actions>
+</md-card>
+

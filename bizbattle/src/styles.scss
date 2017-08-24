@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "~font-awesome/css/font-awesome.css";
+body{
+  background-color: whitesmoke;
+  margin: 0;
+
+  .navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 0 1em black;
+
+    a {
+      &.active {
+        background-color: #81C784;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<md-toolbar color="primary" class="navbar" id="navbar-mobile">
+  <a md-button routerLink="/"><i class="fa fa-beer fa-2x"></i></a>
+  <a md-button routerLink="/log-match" routerLinkActive="active">log-match</a>
+  <a md-button routerLink="/player" routerLinkActive="active">player</a>
+</md-toolbar>
+
+<div class="content-mobile">
+  <router-outlet></router-outlet>
+</div>
+
+<md-toolbar color="primary" class="navbar" id="navbar">
+  <a md-button><i class="fa fa-gamepad fa-2x"></i></a>
+  <a><p>Kamstrup Spillerank</p></a>
+</md-toolbar>
+
+
+<div class="content">
+  <div class="player" id="player">
+    <app-player-component></app-player-component>
+  </div>
+
+  <div class="log-match" id="log-match">
+    <app-app-log-match></app-app-log-match>
+  </div>
+</div>

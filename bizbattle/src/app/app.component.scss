@@ -1,0 +1,104 @@
+$margin-side-mobile: 1em;
+$margin-top-mobile: 4.5em;
+
+$navigation-bar-height: 2em;
+$navigation-bar-offset: 4em;
+
+$breakpoint-tablet: 500px;
+$breakpoint-desktop: 1000px;
+$breakpoint-large-desktop: 1400px;
+
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 0 1em black;
+  height: $navigation-bar-height;
+
+  a {
+    &.active {
+      background-color: darken(#3F51B5, 20%);
+    }
+  }
+}
+
+// Mobile
+@media (max-width: $breakpoint-tablet) {
+  #navbar-mobile {
+    display: block;
+  }
+
+  #navbar-mobile {
+    display: block;
+  }
+
+  .content-mobile {
+    display: block;
+    margin: $navigation-bar-offset $margin-side-mobile $margin-side-mobile;
+  }
+
+  #navbar {
+    display: none;
+  }
+
+  .content {
+    display: none;
+  }
+}
+
+// Tablet
+@media (min-width: $breakpoint-tablet) {
+
+  .content {
+    margin: ($navigation-bar-offset + 1em) $margin-side-mobile $margin-side-mobile;
+    display: grid;
+    grid-template-areas: "player log-match";
+    grid-gap: 1em;
+
+    .player {
+      grid-area: player;
+    }
+      .log-match {
+        grid-area: log-match;
+    }
+  }
+
+  #navbar-mobile {
+    display: none;
+  }
+  .content-mobile {
+    display: none;
+  }
+
+  #navbar {
+    display: block;
+  }
+}
+
+// Desktop
+@media (min-width: $breakpoint-desktop) {
+
+  .content {
+    margin-top: 6em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "player log-match";
+  }
+}
+
+// Large desktop
+@media (min-width: $breakpoint-large-desktop) {
+
+  $large-desktop-side-margin: 10%;
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "player log-match";
+    margin-left: $large-desktop-side-margin;
+    margin-right: $large-desktop-side-margin;
+  }
+}
