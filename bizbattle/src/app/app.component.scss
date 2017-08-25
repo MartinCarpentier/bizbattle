@@ -55,14 +55,17 @@ $breakpoint-large-desktop: 1400px;
   .content {
     margin: ($navigation-bar-offset + 1em) $margin-side-mobile $margin-side-mobile;
     display: grid;
-    grid-template-areas: "player log-match";
+    grid-template-areas: "player log-match top3players";
     grid-gap: 1em;
 
     .player {
       grid-area: player;
     }
-      .log-match {
+    .log-match {
         grid-area: log-match;
+    }
+    .top3players {
+      grid-area: top3players;
     }
   }
 
@@ -82,11 +85,12 @@ $breakpoint-large-desktop: 1400px;
 @media (min-width: $breakpoint-desktop) {
 
   .content {
-    margin-top: 6em;
+    margin-top: 3em;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "player log-match";
+    grid-template-areas: "player log-match top3players";
+    grid-gap: 1em;
   }
+
 }
 
 // Large desktop
@@ -96,9 +100,10 @@ $breakpoint-large-desktop: 1400px;
 
   .content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "player log-match";
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-areas: "player log-match top3players";
     margin-left: $large-desktop-side-margin;
     margin-right: $large-desktop-side-margin;
   }
+
 }

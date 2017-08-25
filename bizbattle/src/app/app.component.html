@@ -1,7 +1,8 @@
-<md-toolbar color="primary" class="navbar" id="navbar-mobile">
-  <a md-button routerLink="/"><i class="fa fa-beer fa-2x"></i></a>
-  <a md-button routerLink="/log-match" routerLinkActive="active">log-match</a>
-  <a md-button routerLink="/player" routerLinkActive="active">player</a>
+<md-toolbar style="font-family: 'Maven Pro', sans-serif;" color="primary" class="navbar" id="navbar-mobile">
+  <a md-button routerLink="/"><i class="fa fa-gamepad fa-2x"></i></a>
+  <a md-button routerLink="/log-match" routerLinkActive="active">Log match</a>
+  <a md-button routerLink="/top3players" routerLinkActive="active">Top 3</a>
+  <a md-button routerLink="/player" routerLinkActive="active">Players</a>
 </md-toolbar>
 
 <div class="content-mobile">
@@ -21,5 +22,9 @@
 
   <div class="log-match" id="log-match">
     <app-app-log-match></app-app-log-match>
+  </div>
+
+  <div class="top3players" id="top3players">
+    <app-app-top3-players></app-app-top3-players>
   </div>
 </div>

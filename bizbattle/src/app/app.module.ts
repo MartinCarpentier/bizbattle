@@ -9,6 +9,7 @@ import 'hammerjs';
 
 import { PlayerModule } from './player/player.module';
 import { LogMatchModule } from './log-match/log-match.module';
+import { Top3PlayersModule} from "./top3-players/top3-players.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LogMatchModule } from './log-match/log-match.module';
     MyMaterialModule,
     AppRoutingModule,
     PlayerModule,
-    LogMatchModule
+    LogMatchModule,
+    Top3PlayersModule
   ],
   bootstrap: [AppComponent]
 })
