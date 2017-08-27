@@ -3,13 +3,17 @@
     <md-card-title>Log match card!</md-card-title>
   </md-card-title-group>
   <md-card-content>
-    <p> Hvor mange spillere er I?</p>
-    <md-radio-group style="display: flex; justify-content: center">
-      <md-radio-button *ngFor="let number of numbers"
-                       [value]="number">
-        {{number}}&nbsp;&nbsp;
-      </md-radio-button>
-    </md-radio-group>
+    <form>
+      <md-input-container>
+        <input type="text" mdInput [mdAutocomplete]="auto">
+      </md-input-container>
+
+      <md-autocomplete #auto="mdAutocomplete">
+        <md-option *ngFor="let option of players | async" [value]="option.Name">
+          {{ option.Name }}
+        </md-option>
+      </md-autocomplete>
+    </form>
   </md-card-content>
 
   <md-card-actions style="text-align: right;">

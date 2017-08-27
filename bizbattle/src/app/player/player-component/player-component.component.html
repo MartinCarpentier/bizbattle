@@ -1,21 +1,19 @@
+
 <md-card style="font-family: 'Maven Pro', sans-serif;">
   <md-card-title-group>
     <md-card-title>Player card!</md-card-title>
   </md-card-title-group>
   <md-card-content>
-    <p> Hvor mange spillere er I?</p>
-    <md-radio-group style="display: flex; justify-content: center">
-      <md-radio-button *ngFor="let number of numbers"
-                       [value]="number">
-        {{number}}&nbsp;&nbsp;
-      </md-radio-button>
-    </md-radio-group>
+    <md-list>
+      <md-list-item *ngFor="let item of players | async" >
+        <img md-list-avatar height="20em" src="{{item.Avatar}}"
+             onerror="this.src='./images/Unknown.png';">
+        <p md-line><b>{{item.Name}}</b></p>
+        <p md-line> Current Elo: {{item.Elo}}</p>
+        <p md-line> Highest Elo: {{item.HighestElo}} </p>
+      </md-list-item>
+    </md-list>
+
   </md-card-content>
 
-  <md-card-actions style="text-align: right;">
-    <button md-raised-button
-            color="accent"
-            style="margin-right: 1em; margin-bottom: 0.3em;">Ok
-    </button>
-  </md-card-actions>
 </md-card>

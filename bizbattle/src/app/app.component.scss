@@ -86,6 +86,8 @@ $breakpoint-large-desktop: 1400px;
 
   .content {
     margin-top: 3em;
+
+    grid-template-columns: 21em 2fr 21em;
     display: grid;
     grid-template-areas: "player log-match top3players";
     grid-gap: 1em;
