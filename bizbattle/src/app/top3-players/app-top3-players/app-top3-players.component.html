@@ -1,23 +1,20 @@
-<md-card style="font-family: 'Maven Pro', sans-serif;" >
+<md-card style="font-family: 'Maven Pro', sans-serif" >
   <md-card-title-group>
     <md-card-title style="font-family: 'Maven Pro', sans-serif;">Top 3 players</md-card-title>
   </md-card-title-group>
   <md-card-content >
-    <div >
-      <p><img style="float: left" [src]="GOLDMEDAL"  width="64" height="64"/>
-        <b>{{
-          var player = new Player()
-
-          (items | async) }}</b> <br> 1260</p>
-    </div>
-    <div style="margin-top: 3em;">
-      <p><img [src]="SILVERMEDAL" style="float: left" width="64" height="64" />
-        <b>Jens Arnfast</b> <br> 1260</p>
-    </div>
-    <div style="margin-bottom: 2em; margin-top:3em">
-      <p><img style="float: left;" [src]="BRONZEMEDAL" width="64" height="64"/>
-        <b>Mike Nabi</b> <br> 1260</p>
-    </div>
+    <p> The current top 3 players of table tennis!</p>
+    <md-list>
+      <md-list-item *ngFor="let item of items | async; let i = index" [attr.data-index]="i">
+        <img md-list-avatar  *ngIf="i == 0" src="{{ GOLDMEDAL }}"
+             onerror="this.src='./images/Unknown.png';">
+        <img md-list-avatar *ngIf="i == 1" src="{{ SILVERMEDAL }}"
+             onerror="this.src='./images/Unknown.png';">
+        <img md-list-avatar *ngIf="i == 2" src="{{ BRONZEMEDAL }}"
+             onerror="this.src='./images/Unknown.png';">
+        <p md-line><b>{{ item.Name }}</b></p>
+        <p md-line>{{ item.Elo }}</p>
+      </md-list-item>
+    </md-list>
   </md-card-content>
 </md-card>
-

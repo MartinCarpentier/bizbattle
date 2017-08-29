@@ -4,9 +4,10 @@ import {
   MdButtonModule,
   MdToolbarModule,
   MdCardModule,
+  MdDialogModule,
   MdRadioModule,
   MdListModule,
-  MdDialogModule,
+  MdSelectModule,
   MdAutocompleteModule,
   MdInputModule
 } from '@angular/material';
@@ -15,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   imports: [
     CommonModule,
+    MdSelectModule,
     BrowserAnimationsModule,
     MdAutocompleteModule,
     MdButtonModule,
@@ -32,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdButtonModule,
     MdToolbarModule,
     MdInputModule,
+    MdSelectModule,
     MdCardModule,
     MdRadioModule,
     MdListModule,

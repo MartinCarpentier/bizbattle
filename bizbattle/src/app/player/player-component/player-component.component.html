@@ -6,7 +6,7 @@
   <md-card-content>
     <md-list>
       <md-list-item *ngFor="let item of players | async" >
-        <img md-list-avatar height="20em" src="{{item.Avatar}}"
+        <img md-list-avatar src="{{item.Avatar}}"
              onerror="this.src='./images/Unknown.png';">
         <p md-line><b>{{item.Name}}</b></p>
         <p md-line> Current Elo: {{item.Elo}}</p>

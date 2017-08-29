@@ -25,6 +25,24 @@ $breakpoint-large-desktop: 1400px;
   }
 }
 
+.content{
+  display: grid;
+  grid-template-areas:
+    "log-match"
+    "top3players"
+    "player";
+
+  .log-match{
+    grid-area: auto;
+  }
+  .top3players{
+    grid-area: subtitle;
+  }
+  .player{
+    grid-area: text;
+  }
+}
+
 // Mobile
 @media (max-width: $breakpoint-tablet) {
   #navbar-mobile {
@@ -55,12 +73,13 @@ $breakpoint-large-desktop: 1400px;
   .content {
     margin: ($navigation-bar-offset + 1em) $margin-side-mobile $margin-side-mobile;
     display: grid;
-    grid-template-areas: "player log-match top3players";
+    grid-template-areas:  "log-match log-match" "top3players top3players" "player player";
     grid-gap: 1em;
 
     .player {
       grid-area: player;
     }
+
     .log-match {
         grid-area: log-match;
     }
@@ -69,13 +88,14 @@ $breakpoint-large-desktop: 1400px;
     }
   }
 
+  grid-template-areas: "log-match log-match" "top3players player" ;
+
   #navbar-mobile {
     display: none;
   }
   .content-mobile {
     display: none;
   }
-
   #navbar {
     display: block;
   }
@@ -85,14 +105,10 @@ $breakpoint-large-desktop: 1400px;
 @media (min-width: $breakpoint-desktop) {
 
   .content {
-    margin-top: 3em;
-
-    grid-template-columns: 21em 2fr 21em;
     display: grid;
-    grid-template-areas: "player log-match top3players";
+    grid-template-areas: "log-match log-match" "top3players player" ;
     grid-gap: 1em;
   }
-
 }
 
 // Large desktop
@@ -102,10 +118,8 @@ $breakpoint-large-desktop: 1400px;
 
   .content {
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
-    grid-template-areas: "player log-match top3players";
+    grid-template-areas: "log-match log-match" "top3players player" ;
     margin-left: $large-desktop-side-margin;
     margin-right: $large-desktop-side-margin;
   }
-
 }
