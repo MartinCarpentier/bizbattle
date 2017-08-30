@@ -6,9 +6,9 @@ pipeline {
     
   }
   stages {
-    stage('Build docker file') {
+    stage('Initialise') {
       steps {
-        sh 'Docker build -t . ymer123/bizbattle:latest'
+        echo 'This is an initialize message'
       }
     }
   }
