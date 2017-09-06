@@ -7,11 +7,11 @@
     <md-list>
       <md-list-item *ngFor="let item of items | async; let i = index" [attr.data-index]="i">
         <img md-list-avatar  *ngIf="i == 0" src="{{ GOLDMEDAL }}"
-             onerror="this.src='./images/Unknown.png';">
+             onerror="this.src='./assets/images/Unknown.png';">
         <img md-list-avatar *ngIf="i == 1" src="{{ SILVERMEDAL }}"
-             onerror="this.src='./images/Unknown.png';">
+             onerror="this.src='./assets/images/Unknown.png';">
         <img md-list-avatar *ngIf="i == 2" src="{{ BRONZEMEDAL }}"
-             onerror="this.src='./images/Unknown.png';">
+             onerror="this.src='./assets/images/Unknown.png';">
         <p md-line><b>{{ item.Name }}</b></p>
         <p md-line>{{ item.Elo }}</p>
       </md-list-item>
