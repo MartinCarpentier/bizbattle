@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
 
 @Component({
@@ -10,7 +10,7 @@ export class PlayerComponentComponent implements OnInit {
   public players: FirebaseListObservable<any[]>;
 
   constructor(public database: AngularFireDatabase) {
-    this.players = database.list('/Users',  {
+    this.players = database.list('/Users', {
       query: {
         orderByChild: "EloOrder"
       }
@@ -20,4 +20,14 @@ export class PlayerComponentComponent implements OnInit {
   ngOnInit() {
   }
 
+  openNewPlayerDialog() {
+    let playerName = prompt("New player name");
+
+    this.createNewPlayer(playerName);
+  }
+
+  private createNewPlayer(playerName: string) {
+    this.players.push({Name: playerName, Elo: 1200, HighestElo: 1200});
+    alert("Player '" + playerName + "' has been added to the database.");
+  }
 }
