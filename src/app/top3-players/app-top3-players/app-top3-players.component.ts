@@ -24,8 +24,8 @@ export class AppTop3PlayersComponent implements OnInit {
   constructor(public database: AngularFireDatabase) {
     this.items = database.list('/Users',  {
       query: {
-        limitToFirst: 3,
-        orderByChild: "EloOrder"
+        orderByChild: "Elo",
+        limitToLast: 3
       }
       });
   }
