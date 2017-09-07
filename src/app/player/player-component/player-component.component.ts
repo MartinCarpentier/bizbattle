@@ -21,9 +21,16 @@ export class PlayerComponentComponent implements OnInit {
   }
 
   openNewPlayerDialog() {
-    let playerName = prompt("New player name");
+    let playerName: string = prompt("New player name");
 
-    this.createNewPlayer(playerName);
+    if (playerName != null) {
+      if (playerName.length > 1) {
+        this.createNewPlayer(playerName);
+      }
+      else {
+        alert("Player name can't be empty");
+      }
+    }
   }
 
   private createNewPlayer(playerName: string) {
