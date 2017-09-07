@@ -1,12 +1,17 @@
-<h2 md-dialog-title>Create a new player</h2>
+<h1 md-dialog-title>Create a new player</h1>
 <div md-dialog-content>
-  <p>What's your favorite animal?</p>
-  <md-form-field>
-    <input mdInput placeholder="Favorite food" value="Sushi">
-  </md-form-field>
+  <h5>What's your favorite animal?</h5>
+  <md-input-container style="width: 20em;">
+    <input mdInput placeholder="Player name">
+  </md-input-container>
+  <h5>Url to your avatar</h5>
+  <div id="avatar" align="middle"></div>
+  <md-input-container style="width: 20em;">
+    <input mdInput placeholder="Avatar url">
+  </md-input-container>
 </div>
-<md-dialog-actions >
-  <button md-button md-dialog-close>Cancel</button>
+<md-dialog-actions  >
+  <button md-button md-raised-button color="accent">Save</button>
   <!-- Can optionally provide a result for the closing dialog. -->
-  <button md-button (click)="onNoClick()">Add</button>
+  <button md-button md-raised-button color="accent" style="margin-left: 2em;" (click)="onNoClick()">Cancel</button>
 </md-dialog-actions>

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MyMaterialModule } from "./my-material/my-material.module";
+import { MyMaterialModule } from './my-material/my-material.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AngularFireModule } from 'angularfire2';
@@ -12,12 +12,14 @@ import 'hammerjs';
 
 import { PlayerModule } from './player/player.module';
 import { LogMatchModule } from './log-match/log-match.module';
-import { Top3PlayersModule} from "./top3-players/top3-players.module";
-import {environment} from "../environments/environment";
+import { Top3PlayersModule} from './top3-players/top3-players.module';
+import {environment} from '../environments/environment';
+import {AppNewPlayerComponent} from './dialogs/app-new-player/app-new-player.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppNewPlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,9 @@ import {environment} from "../environments/environment";
     PlayerModule,
     LogMatchModule,
     Top3PlayersModule
+  ],
+  entryComponents: [
+    AppNewPlayerComponent
   ],
   bootstrap: [AppComponent]
 })
