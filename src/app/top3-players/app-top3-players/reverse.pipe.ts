@@ -7,7 +7,7 @@ import {Player} from "../../models/Player";
 export class ReversePipe implements PipeTransform {
   transform(value: Player[]): any {
     if (value != null) {
-      return value.slice().reverse();
+      return value.reverse();
     }
 
     return null;
