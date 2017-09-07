@@ -1,0 +1,12 @@
+<h2 md-dialog-title>Create a new player</h2>
+<div md-dialog-content>
+  <p>What's your favorite animal?</p>
+  <md-form-field>
+    <input mdInput placeholder="Favorite food" value="Sushi">
+  </md-form-field>
+</div>
+<md-dialog-actions >
+  <button md-button md-dialog-close>Cancel</button>
+  <!-- Can optionally provide a result for the closing dialog. -->
+  <button md-button (click)="onNoClick()">Add</button>
+</md-dialog-actions>
