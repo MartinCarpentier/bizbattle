@@ -1,16 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {AngularFireDatabase, FirebaseListObservable, FirebaseOperation} from "angularfire2/database";
-import {MdDialog} from "@angular/material";
-import {Observable} from "rxjs/Observable";
-
-interface player {
-  $key: FirebaseOperation,
-  Elo: number,
-  Name: string,
-  HighestElo: number,
-  LowestElo: number,
-  Avatar: string
-}
+import {Component, OnInit} from '@angular/core';
+import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
+import {Player} from "../../models/Player";
 
 @Component({
   selector: 'app-app-log-match',
@@ -20,8 +10,8 @@ interface player {
 export class AppLogMatchComponent implements OnInit {
   public players: FirebaseListObservable<any[]>;
   selectedWinner: string = 'NaN';
-  selectedPlayer1: player;
-  selectedPlayer2: player;
+  selectedPlayer1: Player;
+  selectedPlayer2: Player;
   logMatchStatus: string = "Nothing logged yet";
 
   matchWinners = [
@@ -40,11 +30,11 @@ export class AppLogMatchComponent implements OnInit {
   {
     this.selectedWinner = winner;
   }
-  selectedPlayer1Changed(player1: player)
+  selectedPlayer1Changed(player1: Player)
   {
     this.selectedPlayer1 = player1;
   }
-  selectedPlayer2Changed(player2: player)
+  selectedPlayer2Changed(player2: Player)
   {
     this.selectedPlayer2 = player2;
   }

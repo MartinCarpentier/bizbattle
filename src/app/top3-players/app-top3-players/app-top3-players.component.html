@@ -5,7 +5,7 @@
   <md-card-content >
     <p> The current top 3 players of table tennis!</p>
     <md-list>
-      <md-list-item *ngFor="let item of items | async; let i = index" [attr.data-index]="i">
+      <md-list-item *ngFor="let item of items | async | reverse; let i = index" [attr.data-index]="i">
         <img md-list-avatar  *ngIf="i == 0" src="{{ GOLDMEDAL }}"
              onerror="this.src='./assets/images/Unknown.png';">
         <img md-list-avatar *ngIf="i == 1" src="{{ SILVERMEDAL }}"
