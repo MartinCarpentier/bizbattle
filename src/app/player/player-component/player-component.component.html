@@ -6,13 +6,17 @@
   </md-card-title-group>
   <md-card-content>
     <md-list>
-      <md-list-item *ngFor="let item of players | async" >
-        <img md-list-avatar src="{{item.Avatar}}"
-             onerror="this.src='./assets/images/Unknown.png';">
-        <p md-line><b>{{item.Name}}</b></p>
-        <p md-line> Current Elo: {{item.Elo}}</p>
-        <p md-line> Highest Elo: {{item.HighestElo}} </p>
-      </md-list-item>
+      <ng-container *ngFor="let item of players | async">
+        <md-list-item>
+          <img md-list-avatar src="{{item.Avatar}}"
+               onerror="this.src='./assets/images/Unknown.png';">
+          <p md-line><b>{{item.Name}}</b></p>
+          <p md-line> Current Elo: {{item.Elo}}</p>
+          <p md-line> Highest Elo: {{item.HighestElo}} </p>
+          <button md-button (click)="deletePlayer(item)"><i class="material-icons">delete</i></button>
+        </md-list-item>
+        <md-divider></md-divider>
+      </ng-container>
     </md-list>
 
   </md-card-content>
