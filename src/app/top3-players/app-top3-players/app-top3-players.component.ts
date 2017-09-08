@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
 import "rxjs/add/operator/map";
+import {Player} from "../../models/Player";
 
 
 declare var System: any
@@ -15,7 +16,7 @@ declare var Elo: any
 
 
 export class AppTop3PlayersComponent implements OnInit {
-  items: FirebaseListObservable<any[]>;
+  items: FirebaseListObservable<Player[]>;
 
   public GOLDMEDAL;
   public SILVERMEDAL;
@@ -24,10 +25,10 @@ export class AppTop3PlayersComponent implements OnInit {
   constructor(public database: AngularFireDatabase) {
     this.items = database.list('/Users',  {
       query: {
-        limitToFirst: 3,
-        orderByChild: "EloOrder"
+        orderByChild: "Elo",
+        limitToLast: 3
       }
-      });
+      }).map(array => array.sort((a: Player, b: Player) => b.Elo - a.Elo)) as FirebaseListObservable<Player[]>;
   }
 
   ngOnInit() {

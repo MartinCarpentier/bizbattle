@@ -25,7 +25,6 @@ export class PlayerComponentComponent implements OnInit {
   }
 
   openNewPlayerDialog() {
-
     const dialogRef = this.theDialog.open(AppNewPlayerComponent);
 
     dialogRef.afterClosed().subscribe(result => {
