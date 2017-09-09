@@ -28,13 +28,13 @@ export class PlayerComponentComponent implements OnInit {
   openNewPlayerDialog() {
     const dialogRef = this.theDialog.open(AppNewPlayerComponent);
 
-    //dialogRef.afterClosed().subscribe(result => {
-      //alert(`Dialog result: ${result.Name}`); // Pizza!
-    //});
+    dialogRef.afterClosed().subscribe(result => {
+      this.createNewPlayer(result.Name, result.Avatar)
+    });
   }
 
-  private createNewPlayer(playerName: string) {
-    this.players.push({Name: playerName, Elo: 1200, HighestElo: 1200, EloOrder: -1200});
+  private createNewPlayer(playerName: string, playerAvatar: string) {
+    this.players.push({Name: playerName, Elo: 1200, HighestElo: 1200, EloOrder: -1200, Avatar: playerAvatar});
     alert('Player ' + playerName + ' has been added to the database.');
   }
 
