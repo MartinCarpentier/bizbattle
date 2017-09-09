@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyDOWM1Hqg0BPozzdnNewuxtnyzqhOwUVbo",
-    authDomain: "kamstruptabletennis.firebaseapp.com",
-    databaseURL: "https://kamstruptabletennis.firebaseio.com",
-    projectId: "kamstruptabletennis",
-    storageBucket: "kamstruptabletennis.appspot.com",
-    messagingSenderId: "1036767039645"
+    apiKey: "AIzaSyClRMQ_zalSHTehPJ_zD9o8om5D_a2eoI4",
+    authDomain: "systematicbattle.firebaseapp.com",
+    databaseURL: "https://systematicbattle.firebaseio.com",
+    projectId: "systematicbattle",
+    storageBucket: "systematicbattle.appspot.com",
+    messagingSenderId: "174518552805"
   }
 };
