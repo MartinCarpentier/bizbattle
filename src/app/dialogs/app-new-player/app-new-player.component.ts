@@ -18,10 +18,6 @@ export class AppNewPlayerComponent {
     this.dialogRef.close(undefined);
   }
 
-  onKey(event: any) { // without type info
-    this.avatar = event.target.value;
-  }
-
   saveDialog(playerName: string, playerAvatar: string ) {
     var input: Player = {
       $key: this.generateUuidv4(),
