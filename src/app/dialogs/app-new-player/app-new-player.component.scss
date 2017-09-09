@@ -1,10 +1,9 @@
-#avatar {
+.img-circle {
   /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
-  background-image: url('https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg');
-
+  
   /* make a square container */
-  width: 150px;
-  height: 150px;
+  width: 110px;
+  height: 110px;
 
   /* fill the container, preserving aspect ratio, and cropping to fit */
   background-size: cover;
@@ -14,4 +13,10 @@
 
   /* round the edges to a circle with border radius 1/2 container size */
   border-radius: 50%;
+}
+
+.center-image {
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
 }

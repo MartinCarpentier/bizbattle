@@ -1,17 +1,22 @@
-<h1 md-dialog-title>Create a new player</h1>
-<div md-dialog-content>
-  <h5>What's your favorite animal?</h5>
-  <md-input-container style="width: 20em;">
-    <input mdInput placeholder="Player name">
-  </md-input-container>
-  <h5>Url to your avatar</h5>
-  <div id="avatar" align="middle"></div>
-  <md-input-container style="width: 20em;">
-    <input mdInput placeholder="Avatar url">
-  </md-input-container>
-</div>
-<md-dialog-actions  >
-  <button md-button md-raised-button color="accent">Save</button>
-  <!-- Can optionally provide a result for the closing dialog. -->
-  <button md-button md-raised-button color="accent" style="margin-left: 2em;" (click)="onNoClick()">Cancel</button>
-</md-dialog-actions>
+  <h1 md-dialog-title>Create a new player</h1>
+  <div md-dialog-content>
+    <p>What's your favorite animal?</p>
+    <md-input-container style="width: 20em;">
+      <input mdInput (ng-model)="name" placeholder="Player name">
+    </md-input-container>
+    <p>Url to your avatar</p>
+    <div class="center-images">
+      <img class="img-circle center-image" src="{{AVATARIMAGE}}" 
+      onerror="this.src='./assets/images/Unknown.png';">
+    </div>
+    <div>
+      <md-input-container class="row" style="width: 20em;">
+        <input mdInput placeholder="Avatar url" (ng-model)="avatar">
+      </md-input-container>
+    </div>
+  </div>
+  <md-dialog-actions style="float:right">
+    <button md-button md-raised-button color="accent" (click)="saveDialog()">Save</button>
+    <!-- Can optionally provide a result for the closing dialog. -->
+    <button md-button md-raised-button color="accent" style="margin-left: 1em;" (click)="closeDialog()">Cancel</button>
+  </md-dialog-actions>
