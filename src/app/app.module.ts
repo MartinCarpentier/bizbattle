@@ -15,6 +15,7 @@ import { LogMatchModule } from './log-match/log-match.module';
 import { Top3PlayersModule} from './top3-players/top3-players.module';
 import {environment} from '../environments/environment';
 import {AppNewPlayerComponent} from './dialogs/app-new-player/app-new-player.component';
+import { LatestMatchesModule } from './latest-matches/latest-matches.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {AppNewPlayerComponent} from './dialogs/app-new-player/app-new-player.com
     AngularFireDatabaseModule,
     PlayerModule,
     LogMatchModule,
-    Top3PlayersModule
+    Top3PlayersModule,
+    LatestMatchesModule
   ],
   entryComponents: [
     AppNewPlayerComponent

@@ -30,16 +30,21 @@ $breakpoint-large-desktop: 1400px;
   grid-template-areas:
     "log-match"
     "top3players"
-    "player";
+    "player"
+    "latest-matches";
 
   .log-match{
     grid-area: auto;
   }
   .top3players{
-    grid-area: subtitle;
+    grid-area: auto;
   }
   .player{
-    grid-area: text;
+    grid-area: auto;
+  }
+
+  .latest-matches{
+    grid-area: auto;
   }
 }
 
