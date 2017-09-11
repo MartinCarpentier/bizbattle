@@ -5,13 +5,13 @@
   <md-card-content>
     <p>Log your played match here.</p>
     <form>
-        <md-select style="margin-top: 1em; width: 70%" type="text"  placeholder="Select player 1">
-          <md-option *ngFor="let player of players | async" [value]="player.Name" (click)="selectedPlayer1Changed(player)">
+        <md-select style="margin-top: 1em; width: 70%" type="text"  placeholder="Select player 1" [(ngModel)]="selectedPlayer1" name="player1">
+          <md-option *ngFor="let player of players | async" [value]="player">
             {{ player.Name }}
           </md-option>
         </md-select>
-        <md-select style="margin-top: 2em;; width: 70%" type="text" placeholder="Select player 2" >
-          <md-option *ngFor="let player of players | async" [value]="player.Name" (click)="selectedPlayer2Changed(player)">
+        <md-select style="margin-top: 2em;; width: 70%" type="text" placeholder="Select player 2" [(ngModel)]="selectedPlayer2" name="player2">
+          <md-option *ngFor="let player of players | async" [value]="player" name="player2">
             {{ player.Name }}
           </md-option>
         </md-select>
