@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AppNewPlayerComponent} from '../../dialogs/app-new-player/app-new-player.component';
-import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
-import {AngularFireDatabase, FirebaseListObservable, FirebaseOperation} from "angularfire2/database";
+import {MdDialog, MdSnackBar} from '@angular/material';
+import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
 import {Player} from "../../models/Player";
 
 @Component({
@@ -13,7 +13,7 @@ export class PlayerComponentComponent implements OnInit {
   public players: FirebaseListObservable<any[]>;
   public theDialog: MdDialog;
 
-  constructor(public database: AngularFireDatabase, public dialog: MdDialog) {
+  constructor(public database: AngularFireDatabase, public dialog: MdDialog, public snackBar: MdSnackBar) {
     this.theDialog = dialog;
     this.players = database.list('/Users', {
       query: {
@@ -35,7 +35,7 @@ export class PlayerComponentComponent implements OnInit {
 
   private createNewPlayer(playerName: string, playerAvatar: string) {
     this.players.push({Name: playerName, Elo: 1200, HighestElo: 1200, EloOrder: -1200, Avatar: playerAvatar});
-    alert('Player ' + playerName + ' has been added to the database.');
+    this.snackBar.open("Player " + playerName + " has been added to the database.");
   }
 
   deletePlayer(player: Player) {
