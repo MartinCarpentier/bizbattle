@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MdDialogRef} from '@angular/material';
 import {Player} from "../../models/Player";
 
@@ -9,8 +9,9 @@ import {Player} from "../../models/Player";
 })
 export class AppNewPlayerComponent {
 
-  public avatar: string
-  
+  public playerName: string;
+  public avatarUrl: string;
+
   constructor(public dialogRef: MdDialogRef<AppNewPlayerComponent>) {
   }
 
@@ -18,21 +19,21 @@ export class AppNewPlayerComponent {
     this.dialogRef.close(undefined);
   }
 
-  saveDialog(playerName: string, playerAvatar: string ) {
-    var input: Player = {
+  saveDialog() {
+    let input: Player = {
       $key: this.generateUuidv4(),
       Elo: 1200,
-      Name: playerName,
+      Name: this.playerName,
       HighestElo: 1200,
       LowestElo: 1200,
-      Avatar: playerAvatar
-    }
+      Avatar: this.avatarUrl
+    };
 
     this.dialogRef.close(input);
   }
 
   generateUuidv4(): string {
-    return (''+[1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, ch => {
+    return ('' + [1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, ch => {
         let c = Number(ch);
         return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
       }
