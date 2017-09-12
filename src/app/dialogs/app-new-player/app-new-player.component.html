@@ -1,20 +1,23 @@
-  <h1 md-dialog-title>Create a new player</h1>
+<h1 md-dialog-title>Create a new player</h1>
+<form (ngSubmit)="saveDialog()" #newPlayerForm="ngForm">
   <div md-dialog-content>
+
     <md-input-container>
-      <input mdInput #name (keyup)="0" placeholder="Player name">
+      <input mdInput placeholder="Player name" [(ngModel)]="playerName" name="playerName" required>
     </md-input-container>
     <div class="center-images">
-      <img class="img-circle center-image" src="{{avatar.value}}" 
-      onerror="this.src='./assets/images/Unknown.png';">
+      <img class="img-circle center-image" src="{{avatarUrl}}"
+           onerror="this.src='./assets/images/Unknown.png';">
     </div>
     <div>
       <md-input-container class="row">
-        <input mdInput #avatar (keyup)="0" placeholder="Avatar url">
+        <input mdInput placeholder="Avatar url" [(ngModel)]="avatarUrl" name="avatarUrl">
       </md-input-container>
     </div>
   </div>
   <md-dialog-actions style="float:right">
-    <button md-button md-raised-button color="accent" (click)="saveDialog(name.value, avatar.value)">Save</button>
+    <button md-button md-raised-button color="accent" type="submit" [disabled]="!newPlayerForm.form.valid">Save</button>
     <!-- Can optionally provide a result for the closing dialog. -->
     <button md-button md-raised-button color="accent" style="margin-left: 1em;" (click)="closeDialog()">Cancel</button>
   </md-dialog-actions>
+</form>
