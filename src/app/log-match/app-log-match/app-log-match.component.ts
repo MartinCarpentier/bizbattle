@@ -30,14 +30,6 @@ export class AppLogMatchComponent implements OnInit {
   {
     this.selectedWinner = winner;
   }
-  selectedPlayer1Changed(player1: Player)
-  {
-    this.selectedPlayer1 = player1;
-  }
-  selectedPlayer2Changed(player2: Player)
-  {
-    this.selectedPlayer2 = player2;
-  }
 
   logMatch() {
 
@@ -90,6 +82,4 @@ export class AppLogMatchComponent implements OnInit {
                                                            HighestElo: player2HighestElo,
                                                            EloOrder: -Math.round(updatedEloPlayer2) });
   }
-
-
 }
